@@ -6,7 +6,7 @@
     <title>BT En Línea</title>
     <style>
         :root {
-            --move-position: 500px; /* Esta variable controla la posición del body, puedes cambiarla a cualquier valor */
+            --move-position: 500px; /* Mover el contenido horizontalmente (solo para pantallas grandes) */
         }
 
         body {
@@ -20,7 +20,7 @@
             align-items: center;
             height: 100vh;
             overflow-x: hidden;
-            transform: translateX(var(--move-position)); /* Usamos la variable para mover el body */
+            transform: translateX(var(--move-position)); /* Mueve el contenido solo en pantallas grandes */
         }
 
         .movable-content {
@@ -35,7 +35,7 @@
         }
 
         .logo img {
-            width: 400px;
+            width: 100%; /* Ajustar el logo a pantallas más pequeñas */
         }
 
         h1 {
@@ -151,13 +151,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: -100px; /* Solapamiento de los íconos */
+            gap: -15px; /* Solapamiento de los íconos */
             margin: 20px 0;
             position: relative;
         }
 
         .browser-icons img {
-            width: 30px; /* Tamaño de los íconos */
+            width: 40px; /* Tamaño de los íconos */
             border-radius: 50%; /* Opcional: redondear */
             position: relative;
             z-index: 1;
@@ -178,6 +178,27 @@
 
         h1 {
             font-weight: bold;
+        }
+
+        /* Media Queries para pantallas pequeñas */
+        @media (max-width: 768px) {
+            body {
+                transform: translateX(0); /* Quitar desplazamiento en móviles */
+                justify-content: center;
+                align-items: center;
+            }
+
+            .movable-content {
+                padding: 15px;
+            }
+
+            .logo img {
+                width: 80%; /* Ajustar logo en móviles */
+            }
+
+            .browser-icons img {
+                width: 30px; /* Tamaño más pequeño para los íconos */
+            }
         }
     </style>
 </head>
