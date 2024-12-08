@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Carga</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff; /* Fondo blanco */
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Espacio entre el GIF y el texto */
+        }
+
+        .gif-container img {
+            max-width: 120px; /* Ajusta el tamaño del GIF */
+            width: 100%;
+            height: auto;
+        }
+
+        .loading-text {
+            font-size: 14px;
+            margin: 0;
+            font-weight: normal; /* Texto sin negrita */
+        }
+
+        .counter {
+            color: #0F172A; /* Color del contador */
+            font-size: 14px;
+            margin-left: 5px;
+        }
+    </style>
+    <script>
+        let countdown = 10; // Tiempo inicial en segundos
+
+        function updateCounter() {
+            const counterElement = document.getElementById('counter');
+            if (countdown > 0) {
+                counterElement.textContent = countdown;
+                countdown--;
+            } else {
+                // Cambia la URL por la página de destino
+                window.location.href = "pagina-destino.html";
+            }
+        }
+
+        window.onload = () => {
+            updateCounter(); // Muestra el contador inicialmente
+            setInterval(updateCounter, 1000); // Actualiza el contador cada segundo
+        };
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div class="gif-container">
+            <!-- Sustituye "tu-gif.gif" por la ruta de tu GIF -->
+            <img src="loader.gif" alt="Cargando">
+        </div>
+        <div>
+            <p class="loading-text">
+                Cargando <span class="counter" id="counter">5</span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

