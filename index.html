@@ -10,7 +10,7 @@
         }
 
         body {
-            margin: 50;
+            margin: 30;
             font-family: Arial, sans-serif;
             background: url('fondo.jpg') no-repeat center center fixed;
             background-size: cover;
@@ -31,7 +31,7 @@
         }
 
         .logo {
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         .logo img {
@@ -180,26 +180,28 @@
             font-weight: bold;
         }
 
-        /* Media Queries para pantallas pequeñas */
-        @media (max-width: 768px) {
-            body {
-                transform: translateX(0); /* Quitar desplazamiento en móviles */
-                justify-content: center;
-                align-items: center;
-            }
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        transform: translateX(0); /* Quitar desplazamiento en móviles */
+        justify-content: center;
+        align-items: center;
+    }
 
-            .movable-content {
-                padding: 15px;
-            }
+    .movable-content {
+        padding: 15px;
+    }
 
-            .logo img {
-                width: 80%; /* Ajustar logo en móviles */
-            }
+    /* Ajusta el tamaño del logo en móviles */
+    .logo img {
+        width: 100%;  /* Hacer que el logo ocupe el 100% del ancho disponible */
+        height: auto;  /* Mantener la proporción del logo */
+    }
 
-            .browser-icons img {
-                width: 30px; /* Tamaño más pequeño para los íconos */
-            }
-        }
+    .browser-icons img {
+        width: 30px; /* Tamaño más pequeño para los íconos */
+    }
+}
     </style>
 </head>
 <body>
